@@ -1,0 +1,339 @@
+{
+    "version": "1.0",
+    "questions": [
+      {
+        "id": "Q_TEMPERATURE_MONITORING",
+        "text": "How do you monitor the product storage temperature?",
+        "type": "single_select",
+        "options": [
+          {
+            "value": "checked_and_recorded",
+            "label": "We check and record it"
+          },
+          {
+            "value": "checked_not_recorded",
+            "label": "We check it but do not record it"
+          },
+          {
+            "value": "not_checked",
+            "label": "We do not currently check it"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "trigger_tags": [
+          "storage:refrigerated",
+          "storage:frozen"
+        ],
+        "priority": 5,
+        "requirement_ids": [
+          "STORAGE_01"
+        ]
+      },
+      {
+        "id": "Q_FINAL_HANDLING",
+        "text": "How is the food handled after the final cooking step?",
+        "type": "single_select",
+        "options": [
+          {
+            "value": "protected_area",
+            "label": "It is handled in a protected dedicated area"
+          },
+          {
+            "value": "shared_area",
+            "label": "It is handled in a shared production area"
+          },
+          {
+            "value": "no_final_cooking",
+            "label": "There is no final cooking step"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "trigger_tags": [
+          "category:ready_to_eat_meal"
+        ],
+        "priority": 7,
+        "requirement_ids": [
+          "HYGIENE_03"
+        ]
+      },
+      {
+        "id": "Q_ALLERGEN_MANAGEMENT",
+        "text": "How do you manage ingredients that may cause allergies?",
+        "type": "single_select",
+        "options": [
+          {
+            "value": "separated_and_labelled",
+            "label": "They are separated and clearly labelled"
+          },
+          {
+            "value": "labelled_only",
+            "label": "They are labelled but not separately stored"
+          },
+          {
+            "value": "not_managed",
+            "label": "We do not have a specific method"
+          },
+          {
+            "value": "unknown",
+            "label": "I am not sure"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "trigger_tags": [
+          "category:bakery_product"
+        ],
+        "priority": 8,
+        "requirement_ids": [
+          "ALLERGEN_01"
+        ]
+      },
+      {
+        "id": "Q_HEAT_PROCESS",
+        "text": "Do you use a controlled heating or cooking step?",
+        "type": "single_select",
+        "options": [
+          {
+            "value": "controlled_and_recorded",
+            "label": "Yes, and the time or temperature is recorded"
+          },
+          {
+            "value": "controlled_not_recorded",
+            "label": "Yes, but it is not recorded"
+          },
+          {
+            "value": "not_controlled",
+            "label": "Heating is used without defined controls"
+          },
+          {
+            "value": "no_heat_process",
+            "label": "No heating or cooking step is used"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "trigger_tags": [
+          "category:processed_condiment",
+          "category:ready_to_eat_meal"
+        ],
+        "priority": 9,
+        "requirement_ids": [
+          "PROCESS_01"
+        ]
+      },
+      {
+        "id": "Q_CLEANING_RECORD",
+        "text": "How do you record cleaning activities?",
+        "type": "single_select",
+        "options": [
+          {
+            "value": "daily_log",
+            "label": "We maintain a daily cleaning log"
+          },
+          {
+            "value": "informal_notes",
+            "label": "We keep informal notes"
+          },
+          {
+            "value": "not_recorded",
+            "label": "Cleaning is performed but not recorded"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "trigger_tags": [
+          "all"
+        ],
+        "priority": 10,
+        "requirement_ids": [
+          "HYGIENE_01"
+        ]
+      },
+      {
+        "id": "Q_SHELF_LIFE_EVIDENCE",
+        "text": "How was the product shelf life determined?",
+        "type": "single_select",
+        "options": [
+          {
+            "value": "laboratory_or_formal_test",
+            "label": "Using laboratory or formal shelf-life testing"
+          },
+          {
+            "value": "production_experience",
+            "label": "Using our previous production experience"
+          },
+          {
+            "value": "similar_product",
+            "label": "Using a similar product as a reference"
+          },
+          {
+            "value": "not_determined",
+            "label": "It has not been formally determined"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "trigger_tags": [
+          "shelf_life:extended"
+        ],
+        "priority": 12,
+        "requirement_ids": [
+          "PRODUCT_02"
+        ]
+      },
+      {
+        "id": "Q_PACKAGING_FOOD_GRADE",
+        "text": "Can you confirm that the packaging is suitable for food use?",
+        "type": "single_select",
+        "options": [
+          {
+            "value": "supplier_evidence_available",
+            "label": "Yes, and supplier evidence is available"
+          },
+          {
+            "value": "confirmed_without_evidence",
+            "label": "Yes, but no evidence is available"
+          },
+          {
+            "value": "not_confirmed",
+            "label": "No"
+          },
+          {
+            "value": "unknown",
+            "label": "I am not sure"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "trigger_tags": [
+          "packaging:plastic_container",
+          "packaging:glass_bottle",
+          "packaging:flexible_pouch",
+          "packaging:paper_or_cardboard"
+        ],
+        "priority": 15,
+        "requirement_ids": [
+          "PACKAGING_01"
+        ]
+      },
+      {
+        "id": "Q_SUPPLIER_RECORDS",
+        "text": "What supplier information do you currently maintain?",
+        "type": "single_select",
+        "options": [
+          {
+            "value": "approved_supplier_register",
+            "label": "An approved supplier register"
+          },
+          {
+            "value": "invoices_only",
+            "label": "Purchase invoices only"
+          },
+          {
+            "value": "contact_details_only",
+            "label": "Supplier contact details only"
+          },
+          {
+            "value": "no_records",
+            "label": "No supplier records"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "trigger_tags": [
+          "all"
+        ],
+        "priority": 20,
+        "requirement_ids": [
+          "SUPPLIER_01"
+        ]
+      },
+      {
+        "id": "Q_LABEL_DETAILS",
+        "text": "What information is currently shown on the product label?",
+        "type": "single_select",
+        "options": [
+          {
+            "value": "complete_label",
+            "label": "Product, ingredients, dates and producer details"
+          },
+          {
+            "value": "basic_label",
+            "label": "Product name and date only"
+          },
+          {
+            "value": "product_name_only",
+            "label": "Product name only"
+          },
+          {
+            "value": "no_label",
+            "label": "The product does not currently have a label"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "trigger_tags": [
+          "packaging:plastic_container",
+          "packaging:glass_bottle",
+          "packaging:flexible_pouch",
+          "packaging:paper_or_cardboard"
+        ],
+        "priority": 25,
+        "requirement_ids": [
+          "LABEL_01"
+        ]
+      },
+      {
+        "id": "Q_BATCH_RECORDS",
+        "text": "Do you keep production or batch records?",
+        "type": "single_select",
+        "options": [
+          {
+            "value": "every_batch",
+            "label": "Yes, for every batch"
+          },
+          {
+            "value": "sometimes",
+            "label": "Only for some production runs"
+          },
+          {
+            "value": "not_recorded",
+            "label": "No production records are maintained"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "trigger_tags": [
+          "all"
+        ],
+        "priority": 30,
+        "requirement_ids": [
+          "TRACEABILITY_01"
+        ]
+      }
+    ]
+  }
+
+  

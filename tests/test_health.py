@@ -14,7 +14,7 @@ def test_health_endpoint_returns_healthy_status() -> None:
     assert response.json() == {
         "status": "healthy",
         "service": "sls-readiness-ai-service",
-        "version": "0.2.0",
+        "version": "0.3.0",
         "environment": "development",
     }
     
