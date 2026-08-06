@@ -1,20 +1,31 @@
 from fastapi import FastAPI
 
-app = FastAPI(
-    title="SLS Readiness AI Service",
-    description=(
-        "AI-powered SLS readiness assessment microservice "
-        "for supported Sri Lankan food businesses."
-    ),
-    version="0.1.0",
-)
+from app.api.router import api_v1_router, root_router
+from app.core.config import get_settings
 
 
-@app.get("/health")
-def health_check() -> dict[str, str]:
-    """Return the current service health status."""
-    return {
-        "status": "healthy",
-        "service": "sls-readiness-ai-service",
-        "version": "0.1.0",
-    }
+def create_application() -> FastAPI:
+    """Create and configure the FastAPI application."""
+
+    settings = get_settings()
+
+    application = FastAPI(
+        title=settings.service_title,
+        description=(
+            "AI-powered SLS readiness pre-assessment microservice "
+            "for supported Sri Lankan food products."
+        ),
+        version=settings.service_version,
+    )
+
+    application.include_router(root_router)
+
+    application.include_router(
+        api_v1_router,
+        prefix=settings.api_v1_prefix,
+    )
+
+    return application
+
+
+app = create_application()
