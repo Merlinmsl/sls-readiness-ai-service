@@ -1,0 +1,243 @@
+{
+    "version": "1.0",
+    "stage_rules": [
+      {
+        "stage_id": "raw_material_receiving",
+        "stage_label": "Raw material receiving",
+        "keywords": [
+          "buy",
+          "purchase",
+          "receive",
+          "collect",
+          "source",
+          "supplier"
+        ],
+        "priority": 10
+      },
+      {
+        "stage_id": "raw_material_storage",
+        "stage_label": "Raw material storage",
+        "keywords": [
+          "store ingredients",
+          "store raw materials",
+          "ingredient storage",
+          "raw material storage"
+        ],
+        "priority": 20
+      },
+      {
+        "stage_id": "washing_and_preparation",
+        "stage_label": "Washing and preparation",
+        "keywords": [
+          "wash",
+          "rinse",
+          "clean ingredients",
+          "peel"
+        ],
+        "priority": 30
+      },
+      {
+        "stage_id": "preparation_and_mixing",
+        "stage_label": "Preparation and mixing",
+        "keywords": [
+          "cut",
+          "chop",
+          "slice",
+          "grind",
+          "mix",
+          "blend",
+          "knead",
+          "add ingredients"
+        ],
+        "priority": 40
+      },
+      {
+        "stage_id": "thermal_processing",
+        "stage_label": "Heating or cooking",
+        "keywords": [
+          "cook",
+          "boil",
+          "bake",
+          "fry",
+          "heat",
+          "roast",
+          "steam",
+          "pasteurize"
+        ],
+        "priority": 50
+      },
+      {
+        "stage_id": "cooling",
+        "stage_label": "Cooling",
+        "keywords": [
+          "cool",
+          "chill after cooking",
+          "leave to cool"
+        ],
+        "priority": 60
+      },
+      {
+        "stage_id": "packaging",
+        "stage_label": "Packaging",
+        "keywords": [
+          "pack",
+          "package",
+          "fill bottle",
+          "fill container",
+          "bottle",
+          "seal",
+          "wrap",
+          "label"
+        ],
+        "priority": 70
+      },
+      {
+        "stage_id": "finished_product_storage",
+        "stage_label": "Finished product storage",
+        "keywords": [
+          "store finished",
+          "keep finished",
+          "refrigerate",
+          "freeze",
+          "keep in freezer",
+          "keep in refrigerator"
+        ],
+        "priority": 80
+      },
+      {
+        "stage_id": "distribution",
+        "stage_label": "Distribution",
+        "keywords": [
+          "deliver",
+          "transport",
+          "distribute",
+          "send to shops",
+          "send to customers"
+        ],
+        "priority": 90
+      }
+    ],
+    "photo_requests": [
+      {
+        "id": "PHOTO_COLD_STORAGE",
+        "title": "Cold storage area",
+        "instruction": "Upload a clear photo showing the refrigerator, freezer or cold storage area used for the finished product.",
+        "reason": "This helps assess cold-storage conditions and temperature-control evidence.",
+        "trigger_tags": [
+          "storage:refrigerated",
+          "storage:frozen",
+          "stage:finished_product_storage"
+        ],
+        "priority": 5,
+        "required": true
+      },
+      {
+        "id": "PHOTO_HEATING_EQUIPMENT",
+        "title": "Heating or cooking equipment",
+        "instruction": "Upload a photo showing the main equipment used to cook or heat the product.",
+        "reason": "This helps identify the equipment used for the controlled heating stage.",
+        "trigger_tags": [
+          "stage:thermal_processing"
+        ],
+        "priority": 10,
+        "required": true
+      },
+      {
+        "id": "PHOTO_PACKAGING_AREA",
+        "title": "Packaging area",
+        "instruction": "Upload a photo showing where the product is filled, packed or sealed.",
+        "reason": "This helps assess product handling during packaging.",
+        "trigger_tags": [
+          "stage:packaging"
+        ],
+        "priority": 15,
+        "required": true
+      },
+      {
+        "id": "PHOTO_WORKSPACE",
+        "title": "Main production workspace",
+        "instruction": "Upload a wide photo showing the main area where the food is prepared.",
+        "reason": "This provides general evidence about the production environment.",
+        "trigger_tags": [
+          "all"
+        ],
+        "priority": 20,
+        "required": true
+      },
+      {
+        "id": "PHOTO_CLEANING_SETUP",
+        "title": "Cleaning and handwashing setup",
+        "instruction": "Upload a photo showing the handwashing area, cleaning materials or cleaning equipment.",
+        "reason": "This helps assess whether suitable cleaning facilities are available.",
+        "trigger_tags": [
+          "all"
+        ],
+        "priority": 30,
+        "required": true
+      },
+      {
+        "id": "PHOTO_FINISHED_PRODUCT",
+        "title": "Finished packaged product",
+        "instruction": "Upload a clear photo of the finished product and its current packaging or label.",
+        "reason": "This helps assess packaging and visible product-label information.",
+        "trigger_tags": [
+          "all"
+        ],
+        "priority": 40,
+        "required": true
+      }
+    ],
+    "document_requests": [
+      {
+        "id": "DOC_TEMPERATURE_LOG",
+        "title": "Temperature record",
+        "instruction": "Upload a recent refrigerator or freezer temperature record, if one is available.",
+        "reason": "This provides evidence of storage-temperature monitoring.",
+        "trigger_tags": [
+          "storage:refrigerated",
+          "storage:frozen"
+        ],
+        "priority": 5,
+        "required": false
+      },
+      {
+        "id": "DOC_PRODUCT_LABEL",
+        "title": "Product label",
+        "instruction": "Upload the current product label or a file containing the label design.",
+        "reason": "This helps assess the product information currently provided to customers.",
+        "trigger_tags": [
+          "stage:packaging",
+          "packaging:plastic_container",
+          "packaging:glass_bottle",
+          "packaging:flexible_pouch",
+          "packaging:paper_or_cardboard"
+        ],
+        "priority": 10,
+        "required": false
+      },
+      {
+        "id": "DOC_INGREDIENT_LIST",
+        "title": "Ingredient list or recipe sheet",
+        "instruction": "Upload an ingredient list or recipe sheet without confidential quantities, if available.",
+        "reason": "This helps identify raw materials and possible allergen considerations.",
+        "trigger_tags": [
+          "all"
+        ],
+        "priority": 20,
+        "required": false
+      },
+      {
+        "id": "DOC_CLEANING_RECORD",
+        "title": "Cleaning record",
+        "instruction": "Upload a cleaning schedule or completed cleaning record, if one is available.",
+        "reason": "This provides evidence that cleaning activities are planned or recorded.",
+        "trigger_tags": [
+          "all"
+        ],
+        "priority": 30,
+        "required": false
+      }
+    ]
+  }
+
+  
