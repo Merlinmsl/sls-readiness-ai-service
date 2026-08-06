@@ -8,7 +8,7 @@ class Settings(BaseSettings):
 
     service_name: str = "sls-readiness-ai-service"
     service_title: str = "SLS Readiness AI Service"
-    service_version: str = "0.3.0"
+    service_version: str = "0.4.0"
     environment: str = "development"
     api_v1_prefix: str = "/v1"
 
